@@ -1,13 +1,9 @@
----
-title: "Reproducible Research: Peer Assessment 1"
-output: 
-  html_document:
-    keep_md: true
----
+# Reproducible Research: Peer Assessment 1
 
 
 #1. Loading and preprocessing the data
-```{r, echo=TRUE, eval=FALSE}
+
+```r
         ## Reads in the data set, assuming it is in the current directory and is named "activity.csv"
         prepData <- function(){
                 activity <- read.csv("activity.csv")
@@ -29,7 +25,8 @@ output:
 - The median number of steps for day is 10,760 steps
 
 ## Code used to analyze data:
-```{r, echo = TRUE, eval=FALSE}
+
+```r
         ## Calculates the total number of steps taken per day, from the data set x
         stepsTaken <- function(x){
                 x <- na.omit(x)
@@ -57,7 +54,8 @@ output:
 - 8:35 is the time (5-minute interval), on average across all days, that contains the max number of steps (206.1698 steps).
 
 ## Code used to analyze data:
-```{r, echo = TRUE, eval=FALSE}
+
+```r
         ## Calulates the average number of steps per 5-minute interval, across all days
         actPat <- function(x){
                 x <- na.omit(x)
@@ -84,7 +82,8 @@ output:
 - The new median number of steps for day is 10,770 steps, ten more then the original
 
 ## Code used to analyze data:
-```{r, echo = TRUE, eval=FALSE}
+
+```r
         ## Calulates the number of NA's, fills them with the 5-minute interval average, and returns a new data frame "y"
         missVals <- function(x){
                 ## Prints the number of NA values in the data set
@@ -110,7 +109,8 @@ output:
 #5. Are there differences in activity patterns between weekdays and weekends?
 
 ## Code used to analyze data:
-```{r, echo = TRUE, eval=FALSE}
+
+```r
         ## Splits the data into weekday and weekend and plots the outcome
         diffAct <- function(x){
                 if(sum(!complete.cases(x) > 0)){
